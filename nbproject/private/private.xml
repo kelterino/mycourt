@@ -3,14 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Sandbox/training/module/MyCourt/view/layout/layout.phtml</file>
-            <file>file:/C:/Sandbox/training/module/MyCourt/config/module.config.php</file>
-            <file>file:/C:/Sandbox/training/config/modules.config.php</file>
-            <file>file:/C:/Sandbox/training/config/autoload/global.php</file>
-            <file>file:/C:/Sandbox/training/composer.json</file>
-            <file>file:/C:/Sandbox/training/public/index.php</file>
-            <file>file:/C:/Sandbox/training/module/MyCourt/src/Controller/AccountController.php</file>
-            <file>file:/C:/Sandbox/training/module/MyCourt/src/Controller/IndexController.php</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/view/my-court/account/login.phtml</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/view/my-court/index/index.phtml</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/view/layout/partials/navigation.phtml</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/config/module.config.php</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/src/Controller/IndexController.php</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/public/css/style.css</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/public/index.php</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/src/Module.php</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/view/layout/layout.phtml</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/view/my-court/account/edit.phtml</file>
         </group>
     </open-files>
 </project-private>

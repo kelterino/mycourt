@@ -37,15 +37,12 @@
                     </a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="<?= $this->url('home') ?>">Home</a></li>
-                        <li><a href="<?= $this->url('account', ['action'=>'edit', 'id'=>1]) ?>">Mein Account</a></li>
-                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administartion</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<?= $this->url('account', ['action'=>'list']) ?>">Benutzerverwaltung</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <?php 
+                    echo $this->navigation('navigation')
+                        ->menu()
+                        ->setPartial('partials/navigation')
+                        ->render();
+                    ?>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="<?= $this->url('account', ['action'=>'login']) ?>">Login</a></li>
                     </ul>

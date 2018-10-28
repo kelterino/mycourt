@@ -1,74 +1,97 @@
-<div class="jumbotron">
-    <h1>Welcome to <span class="zf-green">Zend Framework</span></h1>
+<script>
+    $(document).ready(function () {
+        displayCourt(1);
+    });
 
-    <p>
-        Congratulations! You have successfully installed the
-        <a href="https://github.com/zendframework/ZendSkeletonApplication" target="_blank">ZF Skeleton Application</a>.
-        You are currently running Zend Framework version <?= \MyCourt\Module::VERSION ?>.
-        This skeleton can serve as a simple starting point for you to begin
-        building your application on ZF.
-    </p>
-
-    <p><a class="btn btn-success btn-lg" href="https://github.com/zendframework/zendframework" target="_blank">Fork Zend Framework on GitHub &raquo;</a></p>
-</div>
+    var displayCourt = function (courtNumber) {
+        $(".court-div").hide();
+        $("#court-select").find('li').removeClass('active');
+        $("#court-" + courtNumber).show();
+        $("#court-selector-" + courtNumber).addClass('active');
+    }
+</script>
 
 <div class="row">
 
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Follow Development</h3>
-            </div>
-            <div class="panel-body">
-                <p>
-                    Zend Framework is under active development. If you are
-                    interested in following the development of ZF, you can check
-                    <a href="http://framework.zend.com/blog/">ZF dev blog</a>,
-                    and <a href="https://github.com/issues?utf8=%E2%9C%93&amp;q=is:issue+org:zendframework">ZF issue tracker</a>
-                    (link requires a GitHub account). This is a great resource
-                    for staying up to date with the latest developments!
-                </p>
+    <div class="col-md-12">
+        <nav aria-label="Pagination-Platzbelegung">
+            <ul class="nav nav-tabs" id="court-select">
+                <?php
+                for ($courtNumber = 1; $courtNumber <= 3; $courtNumber++) {
+                    ?>  
+                <li id="court-selector-<?=$courtNumber?>"><a href='#' onclick='displayCourt(<?= $courtNumber ?>)'>Platz <?= $courtNumber ?></a></li>
+                    <?php
+                }
+                ?>  
+            </ul>
+            <ul class="pagination navbar-right">
+                <li class="page-item">
+                    <a class="page-link" href="<?= $this->url('home'); ?>?current_week=<?=$currentWeek - 1?>" aria-label="Zurück">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">zurück zur KW <?= ($currentWeek - 1) ?></span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">KW <?= $currentWeek ?></a></li>
+                <li class="page-item">
+                    <a class="page-link" href="<?= $this->url('home'); ?>?current_week=<?=$currentWeek + 1?>" aria-label="Weiter">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">weiter zur KW <?= ($currentWeek + 1) ?></span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="<?= $this->url('home'); ?>?current_week=<?=date('W')?>" aria-label="Aktuelle Woche" alt="Aktuelle Woche" title="Aktuelle WOche">
+                        <span aria-hidden="true" class="glyphicon glyphicon-repeat"></span>
+                        <span class="sr-only">aktuelle KW</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <?php
+        for ($courtNumber = 1; $courtNumber <= 3; $courtNumber++) {
+            ?>  
+            <div id="court-<?= $courtNumber ?>" class="court-div">
+                <h2>Platz <?= $courtNumber ?></h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="col-md-1">Uhrzeit</th>
+                            <?php
+                            for ($weekDay = 0; $weekDay < 7; $weekDay++) {
+                                ?>
+                                <th scope="col" class="col-md-1"><?=
+                                    $weekDays[$weekDay] . '<br>'
+                                    . date('d.m.', strtotime($currentYear . 'W'.$currentWeek.' +' . $weekDay . 'days'))
+                                    ?></th>
+                                <?php
+                            }
+                            ?>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        for ($hour = 8; $hour <= 21; $hour++) {
+                            ?>
+                            <tr>
+                                <th scope="row"><?= substr('00' . $hour, -2) ?>:00</th>
+                                <?php
+                                for ($weekDay = 0; $weekDay < 7; $weekDay++) {
+                                    ?>
+                                    <td onclick="alert(1);"><?= $courtNumber ?>-<?= $weekDay ?>-<?= $hour ?></td>
+                                    <?php
+                                }
+                                ?>
+                            </tr>
+                            <?php
+                        }
+                        ?>
 
-                <p><a class="btn btn-success pull-right" href="http://framework.zend.com/" target="_blank">ZF Development Portal &raquo;</a></p>
+                    </tbody>
+                </table>
             </div>
-        </div>
+
+            <?php
+        }
+        ?>
     </div>
 
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Discover Modules</h3>
-            </div>
-            <div class="panel-body">
-                <p>
-                    The community is working on developing a community site to
-                    serve as a repository and gallery for ZF modules. The
-                    project is available <a href="https://github.com/zendframework/modules.zendframework.com">on GitHub</a>.
-                    The site is currently live and currently contains a list of
-                    some of the modules already available for ZF.
-                </p>
-
-                <p><a class="btn btn-success pull-right" href="http://modules.zendframework.com/" target="_blank">Explore ZF Modules &raquo;</a></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Help &amp; Support</h3>
-            </div>
-            <div class="panel-body">
-                <p>
-                    If you need any help or support while developing with ZF,
-                    you may reach us via IRC: <a href="irc://irc.freenode.net/zftalk">#zftalk on Freenode</a>.
-                    We'd love to hear any questions or feedback you may have
-                    regarding this release. Alternatively, you may subscribe
-                    and post questions to the <a href="http://framework.zend.com/archives/">mailing lists</a>.
-                </p>
-
-                <p><a class="btn btn-success pull-right" href="http://webchat.freenode.net?channels=zftalk" target="_blank">Ping us on IRC &raquo;</a></p>
-            </div>
-        </div>
-    </div>
 </div>

@@ -12,6 +12,37 @@ use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
+ 'navigation' => [
+        'default' => [
+            [
+                'label' => 'Platzbelegung',
+                'route' => 'home',
+            ],
+            [
+                'label' => 'Mein Account',
+                'route' => 'account',
+                'action' => 'edit',
+            ],
+            [
+                'label' => 'Administration',
+                'uri' => '#',
+                'pages' => [
+                    [
+                        'label'  => 'Benutzerverwaltung',
+                        'route'  => 'account',
+                        'action' => 'list',
+                    ],
+                ],
+            ],
+        ],
+        'login' => [
+            [
+                'label' => 'Login',
+                'route' => 'account',
+                'action' => 'login',
+            ],
+        ],
+    ],
     'router' => [
         'routes' => [
             'home' => [
@@ -40,6 +71,7 @@ return [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
             Controller\AccountController::class => InvokableFactory::class,
+            'leasecertificate' => 'Christoph\Navigation\Service\LeasecertificateNavigationFactory',            
         ],
     ],
     'view_manager' => [
@@ -71,5 +103,5 @@ return [
                 ]
             ]
         ]
-    ]
+    ],
 ];
