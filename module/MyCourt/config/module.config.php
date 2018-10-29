@@ -69,9 +69,8 @@ return [
     ],
     'controllers' => [
         'factories' => [
-            Controller\IndexController::class => InvokableFactory::class,
+            Controller\IndexController::class => Factory\IndexControllerFactory::class,
             Controller\AccountController::class => InvokableFactory::class,
-            'leasecertificate' => 'Christoph\Navigation\Service\LeasecertificateNavigationFactory',            
         ],
     ],
     'view_manager' => [
@@ -95,7 +94,7 @@ return [
             'ApplicationDriver' => [
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
-                'paths' =>[__DIR__ . '/../src/MyCourt/Entity']
+                'paths' =>[__DIR__ . DIRECTORY_SEPARATOR . '..'.DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'Entity']
             ],
             'orm_default' => [
                 'drivers' => [

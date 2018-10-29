@@ -22,7 +22,7 @@ return [
                     'host'     => 'localhost',
                     'user'     => 'root',
                     'password' => '',
-                    'dbname'   => 'training',
+                    'dbname'   => 'mycourt',
                 ]
             ]
         ]

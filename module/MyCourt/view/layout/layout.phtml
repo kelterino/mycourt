@@ -18,6 +18,7 @@
         ?>
 
         <!-- Scripts -->
+        <?= $this->headScript()->appendFile($this->basePath('js/mycourt.js')) ?>
         <?= $this->headScript()
             ->prependFile($this->basePath('js/bootstrap.min.js'))
             ->prependFile($this->basePath('js/jquery-3.1.0.min.js'))

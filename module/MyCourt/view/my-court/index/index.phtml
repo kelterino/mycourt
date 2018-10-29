@@ -1,25 +1,12 @@
-<script>
-    $(document).ready(function () {
-        displayCourt(1);
-    });
-
-    var displayCourt = function (courtNumber) {
-        $(".court-div").hide();
-        $("#court-select").find('li').removeClass('active');
-        $("#court-" + courtNumber).show();
-        $("#court-selector-" + courtNumber).addClass('active');
-    }
-</script>
-
 <div class="row">
 
     <div class="col-md-12">
         <nav aria-label="Pagination-Platzbelegung">
             <ul class="nav nav-tabs" id="court-select">
                 <?php
-                for ($courtNumber = 1; $courtNumber <= 3; $courtNumber++) {
+                foreach ($courts as $court) {
                     ?>  
-                <li id="court-selector-<?=$courtNumber?>"><a href='#' onclick='displayCourt(<?= $courtNumber ?>)'>Platz <?= $courtNumber ?></a></li>
+                <li id="court-selector-<?=$court->getId()?>"><a href='#' onclick='displayCourt(<?= $court->getId() ?>)'><?= $court->getName() ?></a></li>
                     <?php
                 }
                 ?>  
@@ -47,10 +34,10 @@
             </ul>
         </nav>
         <?php
-        for ($courtNumber = 1; $courtNumber <= 3; $courtNumber++) {
+         foreach ($courts as $court) {
             ?>  
-            <div id="court-<?= $courtNumber ?>" class="court-div">
-                <h2>Platz <?= $courtNumber ?></h2>
+            <div id="court-<?= $court->getId() ?>" class="court-div">
+                <h2><?= $court->getName() ?></h2>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -76,7 +63,7 @@
                                 <?php
                                 for ($weekDay = 0; $weekDay < 7; $weekDay++) {
                                     ?>
-                                    <td onclick="alert(1);"><?= $courtNumber ?>-<?= $weekDay ?>-<?= $hour ?></td>
+                                    <td onclick="alert(1);"><?= $court->getId() ?>-<?= $weekDay ?>-<?= $hour ?></td>
                                     <?php
                                 }
                                 ?>
