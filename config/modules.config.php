@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', 1);
 /**
  * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
  * @copyright Copyright (c) 2005-2016 Zend Technologies USA Inc. (http://www.zend.com)
@@ -11,8 +12,10 @@
  * This should be an array of module namespaces used in the application.
  */
 return [
-    'Zend\Navigation',
+    'Zend\Mvc\I18n',
+    'Zend\I18n',
     'Zend\Form',
+    'Zend\Navigation',
     'Zend\InputFilter',
     'Zend\Cache',
     'Zend\Filter',

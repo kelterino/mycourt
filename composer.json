@@ -17,7 +17,11 @@
         "zendframework/zend-mvc": "^3.0.1",
         "zfcampus/zf-development-mode": "^3.0",
         "doctrine/doctrine-orm-module": "1.1.5",
-        "zendframework/zend-navigation": "^2.9"
+        "zendframework/zend-navigation": "^2.9",
+        "zendframework/zend-form": "^2.12",
+        "zendframework/zend-validator": "^2.10",
+        "zendframework/zend-mvc-i18n": "^1.1",
+        "zendframework/zend-view": "^2.10"
     },
     "autoload": {
         "psr-4": {

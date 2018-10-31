@@ -7,10 +7,9 @@
 
 namespace MyCourt\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class AccountController extends AbstractActionController
+class AccountController extends BaseController
 {
     public function accountAction()
     {

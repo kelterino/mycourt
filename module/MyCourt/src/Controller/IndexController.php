@@ -8,19 +8,13 @@
 
 namespace MyCourt\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class IndexController extends AbstractActionController {
+class IndexController extends BaseController {
 
     protected $currentYear;
     protected $currentWeek;
-    protected $entityManager;
-
-    public function __construct(\Doctrine\ORM\EntityManager $entityManager) {
-        $this->entityManager = $entityManager;
-    }
-
+    
     public function indexAction() {
 //        for ($i = 1; $i <= 3; $i++) {
 //            // Create new Court entity.

@@ -3,16 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/view/my-court/account/login.phtml</file>
-            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/view/my-court/index/index.phtml</file>
-            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/view/layout/partials/navigation.phtml</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/src/Controller/BaseController.php</file>
             <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/config/module.config.php</file>
             <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/src/Controller/IndexController.php</file>
-            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/public/css/style.css</file>
-            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/public/index.php</file>
-            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/src/Module.php</file>
-            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/view/layout/layout.phtml</file>
-            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/view/my-court/account/edit.phtml</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/commands.php</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/view/my-court/court/list.phtml</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/src/Controller/CourtController.php</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/src/Form/CourtForm.php</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/module/MyCourt/view/my-court/court/edit.phtml</file>
+            <file>file:/C:/Users/dude/Documents/GitHub/mycourt/config/modules.config.php</file>
         </group>
     </open-files>
 </project-private>

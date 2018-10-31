@@ -32,6 +32,11 @@ return [
                         'route'  => 'account',
                         'action' => 'list',
                     ],
+                    [
+                        'label'  => 'Platzverwaltung',
+                        'route'  => 'court',
+                        'action' => 'list',
+                    ],
                 ],
             ],
         ],
@@ -65,12 +70,23 @@ return [
                     ],
                 ],
             ],
+            'court' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route'    => '/court[/:action][/:id]',
+                    'defaults' => [
+                        'controller' => Controller\CourtController::class,
+                        'action'     => 'list',
+                    ],
+                ],
+            ],
         ],
     ],
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => Factory\IndexControllerFactory::class,
             Controller\AccountController::class => InvokableFactory::class,
+            Controller\CourtController::class => Factory\CourtControllerFactory::class,
         ],
     ],
     'view_manager' => [
